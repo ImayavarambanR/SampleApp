@@ -7,6 +7,19 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('home');
+  this.route('contacts', function() {
+    this.route('create');
+    this.route('disp',{path:'/:contact_id'});
+  });
+  this.route('reminders', function() {
+    this.route('create');
+    this.route('disp',{path:'/:reminder_id'});
+  });
+  this.route('about');
+
+
+  this.route('reminder-list');
 });
 
 export default Router;
